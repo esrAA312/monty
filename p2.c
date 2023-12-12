@@ -1,4 +1,4 @@
-nclude "monty.h"
+#include "monty.h"
 /**
  * p_int - print int a top of stack
  * @stack: pointer to linked list stack
