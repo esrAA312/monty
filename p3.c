@@ -22,7 +22,8 @@ void po_p(stack_t **stack, unsigned int line)
 void _nop(__attribute__ ((unused))stack_t **stack,
 		__attribute__ ((unused))unsigned int line_number)
 {
-	;
+	(void)stack;
+	(void)line_number;
 }
 /**
  * dnodedel - delete node a specific spot
