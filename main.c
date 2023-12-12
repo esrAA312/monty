@@ -4,6 +4,7 @@
  * @ac: int num of arguments
  * @av: opcode file
  * Return: 0
+ *Every good language comes with the capability of commenting.
  */
 int glo = 0;
 int main(int ac, char **av)

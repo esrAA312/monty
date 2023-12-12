@@ -28,6 +28,3 @@ convert itoa
 	[+++++ +++>]
 	<[<]>-
 ]
-print with newline
->>[.<<]<[<<]>>.
->>,. 
