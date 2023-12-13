@@ -80,6 +80,7 @@ void rotl(stack_t **, unsigned int);
 void err(int error_code, ...);
 void more_err(int error_code, ...);
 void string_err(int error_code, ...);
+int dnodedel(stack_t **head, unsigned int index);
 void rotr(stack_t **, unsigned int);
 int _strcmp(char *s1, char *s2);
 #endif
