@@ -7,7 +7,6 @@
 #include <unistd.h>
 #include <ctype.h>
 
-extern int glo;
 /*--- Struct Definitions ---*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,6 +37,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line);
 } instruction_t;
 
+extern int glo;
 typedef void (*instruct_func)(stack_t **stack, unsigned int line);
 char *parse_line(char *line);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
