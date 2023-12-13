@@ -47,7 +47,6 @@ void read_file(FILE *fd)
  * @buffer: line from the file
  * @line_number: line number
  * @format:  storage format. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
@@ -79,7 +78,6 @@ int parse_line(char *buffer, int line_number, int format)
  * @value: argument of opcode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
  * @ln: line number
- * if 1 nodes will be entered as a queue.
  * Return: void
  */
 void find_func(char *opcode, char *value, int ln, int format)
@@ -111,7 +109,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 
 	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
-		if (strcmp(opcode, func_list[i].opcode) == 0)
+		if (_strcmp(opcode, func_list[i].opcode) == 0)
 		{
 			call_fun(func_list[i].f, opcode, value, ln, format);
 			flag = 0;
@@ -129,7 +127,6 @@ void find_func(char *opcode, char *value, int ln, int format)
  * @val: string representing a numeric value.
  * @ln: line numeber for the instruction.
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
  */
 void call_fun(op_func func, char *op, char *val, int ln, int format)
 {
@@ -139,7 +136,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 
 	flag = 1;
 	i = 0;
-	if (strcmp(op, "push") == 0)
+	if (_strcmp(op, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')
 		{
