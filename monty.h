@@ -48,7 +48,8 @@ int parse_line(char *buffer, int line_number, int format);
 void read_file(FILE *);
 int len_chars(FILE *);
 void find_func(char *, char *, int, int);
-
+ void pch_ar(stack_t **stack, unsigned int line_number);
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 /*Stack operations*/
 stack_t *create_node(int n);
 void free_nodes(void);

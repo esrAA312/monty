@@ -1,21 +1,33 @@
 #include "monty.h"
 
 /**
- * print_char - Prints the Ascii value.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * pch_ar - prints the ASCII value of a number
+ * @stack: pointer to the top of the stack
+ * @line_number: the index of the current line
+ *
  */
-void print_char(stack_t **stack, unsigned int line_number)
+void pch_ar(stack_t **stack, unsigned int line_number)
 {
-	int ascii;
+	stack_t *run;
+	int v;
 
-	if (stack == NULL || *stack == NULL)
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pcar, stack empty\n", line_number);
 		string_err(11, line_number);
+	}
 
-	ascii = (*stack)->n;
-	if (ascii < 0 || ascii > 127)
+	run = *stack;
+	v = run->n;
+
+	if (!isprint(v))
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		string_err(10, line_number);
-	printf("%c\n", ascii);
+	}
+
+	putchar(v);
+	putchar('\n');
 }
 
 /**
@@ -28,7 +40,7 @@ void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 	int ascii;
 	stack_t *tmp;
 
-	if (stack == NULL || *stack == NULL)
+	if (*stack == NULL)
 	{
 		printf("\n");
 		return;
@@ -43,7 +55,6 @@ void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 		printf("%c", ascii);
 		tmp = tmp->next;
 	}
-	printf("\n");
 }
 
 /**
@@ -55,7 +66,7 @@ void rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	if (stack == NULL || (*stack)->next == NULL)
 		return;
 
 	tmp = *stack;
@@ -71,25 +82,27 @@ void rotl(stack_t **stack, __attribute__((unused))unsigned int ln)
 
 
 /**
- * rotr - Rotates the last node of the stack to the top.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @ln: Interger representing the line number of of the opcode.
+ *f_rotr- rotates the stack to the bottom
+ *@he: stack head
+ *@counter: line_number
+ *Return: no return
  */
-void rotr(stack_t **stack, __attribute__((unused))unsigned int ln)
+void f_rotr(stack_t **he, __attribute__((unused)) unsigned int counter)
 {
-	stack_t *tmp;
+	stack_t *copy;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	copy = *he;
+	if (*he == NULL || (*he)->next == NULL)
+	{
 		return;
-
-	tmp = *stack;
-
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-
-	tmp->next = *stack;
-	tmp->prev->next = NULL;
-	tmp->prev = NULL;
-	(*stack)->prev = tmp;
-	(*stack) = tmp;
+	}
+	while (copy->next)
+	{
+		copy = copy->next;
+	}
+	copy->next = *he;
+	copy->prev->next = NULL;
+	copy->prev = NULL;
+	(*he)->prev = copy;
+	(*he) = copy;
 }
