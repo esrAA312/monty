@@ -18,19 +18,16 @@ void nop(stack_t **stack, unsigned int line_number)
  * @line_number: Interger representing the line number of of the opcode.
  */
 void swap_nodes(stack_t **stack, unsigned int line_number)
-{
-	stack_t *tmp;
+{        stack_t *run;
+	int tmpe;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "swap");
-	tmp = (*stack)->next;
-	(*stack)->next = tmp->next;
-	if (tmp->next != NULL)
-		tmp->next->prev = *stack;
-	tmp->next = *stack;
-	(*stack)->prev = tmp;
-	tmp->prev = NULL;
-	*stack = tmp;
+	run = *stack;
+	if (run == NULL || run->next == NULL)
+	{
+		more_err(8, line_number, "swap");	}
+	tmpe = run->n;
+	run->n = run->next->n;
+	run->next->n = tmpe;
 }
 
 /**

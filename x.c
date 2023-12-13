@@ -13,7 +13,6 @@ void pch_ar(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pcar, stack empty\n", line_number);
 		string_err(11, line_number);
 	}
 
@@ -22,7 +21,6 @@ void pch_ar(stack_t **stack, unsigned int line_number)
 
 	if (!isprint(v))
 	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		string_err(10, line_number);
 	}
 
@@ -54,7 +52,9 @@ void print_str(stack_t **stack, __attribute__((unused))unsigned int ln)
 			break;
 		printf("%c", ascii);
 		tmp = tmp->next;
+
 	}
+	printf("\n");
 }
 
 /**
@@ -105,4 +105,26 @@ void f_rotr(stack_t **he, __attribute__((unused)) unsigned int counter)
 	copy->prev = NULL;
 	(*he)->prev = copy;
 	(*he) = copy;
+}
+/**
+ * _strcmp - compare string values
+ * @s1: input value
+ * @s2: input value
+ *
+ * Return: s1[i] - s2[i]
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
+	}
+	return (0);
 }

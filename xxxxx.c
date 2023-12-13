@@ -29,10 +29,13 @@ void read_file(FILE *fd)
 	int line_number, format = 0;
 	char *buffer = NULL;
 	size_t len = 0;
+	line_number = 1;
 
-	for (line_number = 1; getline(&buffer, &len, fd) != -1; line_number++)
+
+	while (getline(&buffer, &len, fd) != -1)
 	{
 		format = parse_line(buffer, line_number, format);
+		line_number++;
 	}
 	free(buffer);
 }
@@ -61,9 +64,9 @@ int parse_line(char *buffer, int line_number, int format)
 		return (format);
 	value = strtok(NULL, delim);
 
-	if (strcmp(opcode, "stack") == 0)
+	if (_strcmp(opcode, "stack") == 0)
 		return (0);
-	if (strcmp(opcode, "queue") == 0)
+	if (_strcmp(opcode, "queue") == 0)
 		return (1);
 
 	find_func(opcode, value, line_number, format);
@@ -135,6 +138,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 	int i;
 
 	flag = 1;
+	i = 0;
 	if (strcmp(op, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')
@@ -144,10 +148,11 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 		}
 		if (val == NULL)
 			err(5, ln);
-		for (i = 0; val[i] != '\0'; i++)
+		while (val[i] != '\0')
 		{
 			if (isdigit(val[i]) == 0)
 				err(5, ln);
+			i++;
 		}
 		node = create_node(atoi(val) * flag);
 		if (format == 0)
