@@ -10,7 +10,7 @@ void err(int error_code, ...)
 	char *op;
 	int l_num;
 
-	va_start(ag, eror_code);
+	va_start(ag, error_code);
 
 	if (error_code == 1) 
 		fprintf(stderr, "USAGE: monty file\n");
