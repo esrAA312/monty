@@ -6,7 +6,7 @@
  * Return: 0
  *Every good language comes with the capability of commenting.
  */
-int glo = NULL;
+int glo = 0;
 int main(int ac, char **av)
 {
 	stack_t *stack;
