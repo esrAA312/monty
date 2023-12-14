@@ -13,7 +13,7 @@ void pch_ar(stack_t **stack, unsigned int mon)
 
 	if (*stack == NULL)
 	{
-		string_err(11, mon);
+		e3(11, mon);
 	}
 
 	run = *stack;
@@ -21,25 +21,11 @@ void pch_ar(stack_t **stack, unsigned int mon)
 
 	if (!isprint(v))
 	{
-		string_err(10, mon);
+		e3(10, mon);
 	}
 
 	_putchar(v);
 	_putchar('\n');
-}
-
-#include <unistd.h>
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
 
 /**
@@ -75,11 +61,11 @@ void mo_d(stack_t **stack, unsigned int mon)
 
 	if (stack == NULL || (*stack)->next == NULL)
 
-		more_err(8, mon, "mod");
+		e2(8, mon, "mod");
 
 
 	if ((*stack)->n == 0)
-		more_err(9, mon);
+		e2(9, mon);
 	(*stack) = (*stack)->next;
 	mod = (*stack)->n % (*stack)->prev->n;
 	(*stack)->n = mod;
