@@ -24,8 +24,8 @@ void pch_ar(stack_t **stack, unsigned int mon)
 		e3(10, mon);
 	}
 
-	_putchar(v);
-	_putchar('\n');
+	putchar(v);
+	putchar('\n');
 }
 
 /**
