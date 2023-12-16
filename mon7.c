@@ -99,5 +99,5 @@ void cfun(op_func func, char *o, char *val, int ln, int j)
 			add_qu(&x, ln);
 	}
 	else
-		func(&head, ln);
+		func(&x, ln);
 }
