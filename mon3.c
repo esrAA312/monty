@@ -114,7 +114,7 @@ void f_func(char *opcode, char *val, int ln, int form)
 
 	for (fg = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
-		if (_strcmp(opcode, func_list[i].opcode) == 0)
+		if (strcmp(opcode, func_list[i].opcode) == 0)
 		{
 			cfun(func_list[i].f, opcode, val, ln, form);
 			fg = 0;
