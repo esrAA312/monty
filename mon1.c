@@ -11,7 +11,7 @@ void pch_ar(stack_t **stack, unsigned int mon)
 	stack_t *run;
 	int v;
 
-	if (*stack == NULL)
+	if (*stack == NULL || stack == NULL)
 	{
 		e3(11, mon);
 	}
@@ -59,7 +59,7 @@ void mo_d(stack_t **stack, unsigned int mon)
 {
 	int mod;
 
-	if (stack == NULL || (*stack)->next == NULL)
+	if (stack == NULL || (*stack)->next == NULL || stack == NULL)
 
 		e2(8, mon, "mod");
 

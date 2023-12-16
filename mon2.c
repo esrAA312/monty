@@ -40,7 +40,7 @@ void ro_tr(stack_t **he, __attribute__((unused)) unsigned int Inx)
 	stack_t *cop;
 
 	cop = *he;
-	if (*he == NULL || (*he)->next == NULL)
+	if (*he == NULL || (*he)->next == NULL || he == NULL)
 	{
 		return;
 	}

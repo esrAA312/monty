@@ -9,7 +9,7 @@ void ro_tl(stack_t **stack, __attribute__((unused))unsigned int lnx)
 {
 	stack_t *tmpe;
 
-	if (stack == NULL || (*stack)->next == NULL)
+	if (stack == NULL || (*stack)->next == NULL || *stack == NULL)
 		return;
 
 	tmpe = *stack;
