@@ -78,7 +78,7 @@ void cfun(op_func func, char *o, char *val, int ln, int j)
 	int i;
 
 	fg = 1;
-	if (_strcmp(o, "push") == 0)
+	if (strcmp(o, "push") == 0)
 	{
 		if (val != NULL && val[0] == '-')
 		{
