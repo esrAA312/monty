@@ -10,7 +10,7 @@ void mu_l(stack_t **stack, unsigned int mon)
 	int mul;
 
 	if (stack == NULL || (*stack)->next == NULL || *stack == NULL)
-		e1(3, mon, "mul");
+		e1(8, mon, "mul");
 
 	(*stack) = (*stack)->next;
 	mul = (*stack)->n * (*stack)->prev->n;

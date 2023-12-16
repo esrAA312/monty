@@ -33,7 +33,7 @@ void su_b(stack_t **stack, unsigned int mon)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
-		e2(8, mon, "sub");
+		e1(3, mon, "sub");
 
 
 	(*stack) = (*stack)->next;
