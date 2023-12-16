@@ -50,7 +50,7 @@ int pl(char *buf, int mon, int format)
 	val = strtok(NULL, delimt);
 
 	if (_strcmp(code, "stack") == 0)
-		if (_strcmp(code, "queue") == 0)
+	if (_strcmp(code, "queue") == 0)
 			return (1);
 
 	f_func(code, val, mon, format);
