@@ -23,7 +23,7 @@ int binaryHeight(const binary_tree_t *tree)
 {
 	int left, right;
 
-	if (!tree)
+if (!tree)
 		return (-1);
 
 	if (!tree->left && tree->right == NULL)
@@ -37,4 +37,3 @@ int binaryHeight(const binary_tree_t *tree)
 	else
 		return (right);
 }
-

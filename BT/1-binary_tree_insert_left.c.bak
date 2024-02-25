@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_insert_right
+ * binary_tree_insert_left
  *
  * @parent: a pointer to the parent node of the node to create
  *
@@ -11,7 +11,7 @@
  * or NULL on failure or if parent is NULL
  */
 
-binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
+binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
 	binary_tree_t *nNode;
 
@@ -22,13 +22,12 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 	if (!nNode)
 		return (NULL);
 
-	if (parent->right)
+	if (parent->left)
 	{
-		nNode->right = parent->right;
-		parent->right->parent = nNode;
+		nNode->left = parent->left;
+		parent->left->parent = nNode;
 	}
-	parent->right = nNode;
+	parent->left = nNode;
 
 	return (nNode);
 }
-

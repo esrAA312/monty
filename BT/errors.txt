@@ -1,0 +1,31 @@
+
+========== 2-binary_tree_insert_right.c ==========
+binary_tree_insert_right
+2-binary_tree_insert_right.c:4: warning: missing initial short description
+
+========== 0-binary_tree_node.c ==========
+binary_tree_node
+
+========== 2-main.c ==========
+main
+
+========== 0-main.c ==========
+main
+
+========== 3-binary_tree_delete.c ==========
+3-binary_tree_delete.c:16: WARNING: else is not generally useful after a break or return
+total: 0 errors, 1 warnings, 23 lines checked
+binary_tree_delete
+
+========== 10-binary_tree_depth.c ==========
+binary_tree_depth
+
+========== 3-main.c ==========
+main
+
+========== 10-main.c ==========
+main
+
+========== 4-binary_tree_is_leaf.c ==========
+binary_tree_is_leaf
+4-binary_tree_is_leaf.c:4: warning: missing initial short description
