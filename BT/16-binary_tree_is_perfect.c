@@ -1,0 +1,29 @@
+#include "binary_trees.h"
+
+/**
+ * binary_tree_is_perfect - Checks if a binary tree is perfect.
+ * @tree: A pointer to the root node of the tree to check.
+ *
+ * Return: If tree is NULL or not perfect, 0.
+ *         Otherwise, 1.
+ */
+int binary_tree_is_perfect(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (0);
+
+	size_t leaf_depth = 0;
+	const binary_tree_t *leaf = tree;
+
+	while (leaf->left != NULL || leaf->right != NULL)
+	{
+		leaf = (leaf->left != NULL) ? leaf->left : leaf->right;
+		leaf_depth++;
+	}
+
+	return (tree->left == NULL && tree->right == NULL) ||
+		(tree->left != NULL && tree->right != NULL &&
+		 binary_tree_is_perfect(tree->left) &&
+		 binary_tree_is_perfect(tree->right) &&
+		 leaf_depth == 0);
+}
