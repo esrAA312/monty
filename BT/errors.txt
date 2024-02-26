@@ -1,15 +1,80 @@
 
+========== 0-binary_tree_node.c ==========
+binary_tree_node
+
+========== 0-main.c ==========
+main
+
+========== 10-binary_tree_depth.c ==========
+binary_tree_depth
+
+========== 10-main.c ==========
+main
+
+========== 11-binary_tree_size.c ==========
+binary_tree_size
+
+========== 11-main.c ==========
+main
+
+========== 12-binary_tree_leaves.c ==========
+binary_tree_leaves
+
+========== 12-main.c ==========
+main
+
+========== 13-binary_tree_nodes.c ==========
+binary_tree_nodes
+
+========== 13-main.c ==========
+main
+
+========== 14-binary_tree_balance.c ==========
+14-binary_tree_balance.c:13: ERROR: space required before the open parenthesis '('
+total: 1 errors, 0 warnings, 40 lines checked
+binary_tree_balance
+binaryHeight
+14-binary_tree_balance.c:4: warning: missing initial short description
+
+========== 14-main.c ==========
+main
+
+========== 15-binary_tree_is_full.c ==========
+binary_tree_is_full
+
+========== 15-main.c ==========
+main
+
+========== 16-binary_tree_is_perfect.c ==========
+binary_tree_is_perfect
+
+========== 16-main.c ==========
+main
+
+========== 17-binary_tree_sibling.c ==========
+binary_tree_sibling
+
+========== 17-main.c ==========
+main
+
+========== 18-binary_tree_uncle.c ==========
+binary_tree_uncle
+
+========== 18-main.c ==========
+main
+
+========== 1-binary_tree_insert_left.c ==========
+binary_tree_insert_left
+1-binary_tree_insert_left.c:4: warning: missing initial short description
+
+========== 1-main.c ==========
+main
+
 ========== 2-binary_tree_insert_right.c ==========
 binary_tree_insert_right
 2-binary_tree_insert_right.c:4: warning: missing initial short description
 
-========== 0-binary_tree_node.c ==========
-binary_tree_node
-
 ========== 2-main.c ==========
-main
-
-========== 0-main.c ==========
 main
 
 ========== 3-binary_tree_delete.c ==========
@@ -17,15 +82,51 @@ main
 total: 0 errors, 1 warnings, 23 lines checked
 binary_tree_delete
 
-========== 10-binary_tree_depth.c ==========
-binary_tree_depth
-
 ========== 3-main.c ==========
-main
-
-========== 10-main.c ==========
 main
 
 ========== 4-binary_tree_is_leaf.c ==========
 binary_tree_is_leaf
 4-binary_tree_is_leaf.c:4: warning: missing initial short description
+
+========== 4-main.c ==========
+main
+
+========== 5-binary_tree_is_root.c ==========
+binary_tree_is_root
+5-binary_tree_is_root.c:4: warning: missing initial short description
+
+========== 5-main.c ==========
+main
+
+========== 6-binary_tree_preorder.c ==========
+binary_tree_preorder
+
+========== 6-main.c ==========
+print_num
+main
+
+========== 7-binary_tree_inorder.c ==========
+binary_tree_inorder
+
+========== 7-main.c ==========
+print_num
+main
+
+========== 8-binary_tree_postorder.c ==========
+binary_tree_postorder
+
+========== 8-main.c ==========
+print_num
+main
+
+========== 9-binary_tree_height.c ==========
+binary_tree_height
+
+========== 9-main.c ==========
+main
+
+========== binary_tree_print.c ==========
+print_t
+_height
+binary_tree_print

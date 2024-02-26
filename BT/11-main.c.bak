@@ -27,3 +27,4 @@ int main(void)
 	printf("Size of %d: %lu\n", root->left->right->n, size);
 	return (0);
 }
+
