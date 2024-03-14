@@ -7,13 +7,24 @@ import MySQLdb
 
 def list_states(username, password, database, state_name):
     """lists all states from the database hbtn_0e_0_usa."""
-    db = MySQLdb.connect(user=username, passwd=password, db=database)
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database,
+    )
 
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = BINARY '{}' ORDER BY states.id".format(
-            state_name
+        (
+            [
+                "SELECT city.id, city.name, st name",
+                "FROM cities city, states st",
+                "WHERE city.state_id = st.id",
+                "ORDER BY city.id",
+            ]
         )
     )
 
@@ -33,4 +44,4 @@ if __name__ == "__main__":
 
     state_name = sys.argv[4]
 
-    list_states(username, password, database, state_name)
+    list_states(username, password, database)

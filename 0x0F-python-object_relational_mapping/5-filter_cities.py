@@ -7,20 +7,25 @@ import MySQLdb
 
 def list_states(username, password, database, state_name):
     """lists all states from the database hbtn_0e_0_usa."""
-    db = MySQLdb.connect(user=username, passwd=password, db=database)
+    db = MySQLdb.connect(
+        host="localhost", port=3306, user=username, passwd=password, db=database
+    )
 
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states WHERE name = BINARY '{}' ORDER BY states.id".format(
-            state_name
-        )
+        "SELECT * FROM `cities` as `ct` \
+                INNER JOIN `states` as `s` \
+                   ON `ct`.`state_id` = `s`.`id` \
+                ORDER BY `ct`.`id`"
     )
-
     rows = cursor.fetchall()
 
-    [print(row) for row in rows]
-
+    # Display the results
+    if rows:
+        print(", ".join(row[0] for row in rows))
+    else:
+        print()
     db.close()
 
 

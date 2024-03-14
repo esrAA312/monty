@@ -5,15 +5,9 @@ import sys
 import MySQLdb
 
 
-def list_states (username, password, database):
-
-    """lists all states from the database hbtn_0e_0_usa.
-    """
-    db = MySQLdb.connect(user=username,\
-
-            passwd=password,\
-
-            db=database)
+def list_states(username, password, database):
+    """lists all states from the database hbtn_0e_0_usa."""
+    db = MySQLdb.connect(user=username, passwd=password, db=database)
 
     cursor = db.cursor()
 
@@ -25,8 +19,8 @@ def list_states (username, password, database):
 
     db.close()
 
-if __name__ == '__main__':
 
+if __name__ == "__main__":
     username = sys.argv[1]
 
     password = sys.argv[2]
