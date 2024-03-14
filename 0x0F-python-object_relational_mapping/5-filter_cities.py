@@ -19,13 +19,7 @@ def list_states(username, password, database, state_name):
                    ON `ct`.`state_id` = `s`.`id` \
                 ORDER BY `ct`.`id`"
     )
-    rows = cursor.fetchall()
-
-    # Display the results
-    if rows:
-        print(", ".join(row[0] for row in rows))
-    else:
-        print()
+    print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
     db.close()
 
 
