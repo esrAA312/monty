@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" all values in the states table"""
 import sys
 
 import MySQLdb

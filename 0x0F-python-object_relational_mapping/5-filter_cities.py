@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""Takes argument and lists all cities of that state
+"""
 import sys
 
 import MySQLdb
@@ -22,7 +23,9 @@ def list_states(username, password, database, state_name):
                    ON `ct`.`state_id` = `s`.`id` \
                 ORDER BY `ct`.`id`"
     )
-    print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
+    cities = cursor.fetchall()
+    matching_cities = [city[2] for city in cities if city[4] == state_name]
+    print(", ".join(matching_cities))
     db.close()
 
 

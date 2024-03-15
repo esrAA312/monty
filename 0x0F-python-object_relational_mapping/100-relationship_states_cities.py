@@ -1,29 +1,34 @@
+#!/usr/bin/python3
+"""Module that lists all State objects"""
+import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import State
-from relationship_city import Base, City
+from relationship_city import City
 
 
-def add_city_state(username, password, database):
+def print_states_and_cities(username, password, database):
+    """Module that lists all State objects"""
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-            username, password, database),
+        f"mysql+mysqldb://{username}:{password}@localhost/{database}",
         pool_pre_ping=True,
     )
-
-    Base.metadata.create_all(engine)
-
     Session = sessionmaker(bind=engine)
-
     session = Session()
 
-    state = State(name="California")
-    city = City(name="San Francisco", state=state)
-
-    session.add(state)
-    session.add(city)
-    session.commit()
+    states = session.query(State).order_by(State.id).all()
+    state_index = 0
+    while state_index < len(states):
+        state = states[state_index]
+        print(f"{state.id}: {state.name}")
+        city_index = 0
+        while city_index < len(state.cities):
+            city = state.cities[city_index]
+            print(f"    {city.id}: {city.name}")
+            city_index += 1
+        state_index += 1
 
 
 if __name__ == "__main__":
-    add_city_state(sys.argv[1], sys.argv[2], sys.argv[3])
+    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+    print_states_and_cities(username, password, database)

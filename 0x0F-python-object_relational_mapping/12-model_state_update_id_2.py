@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def update_state_name(username, password, database, state_id, new_name):
+def update_state_name(username, password, database):
     """
     Update the name of a State object with the given ID in the database.
 
@@ -20,13 +20,13 @@ def update_state_name(username, password, database, state_id, new_name):
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter_by(id=state_id).first()
+    state = session.query(State).filter_by(id=2).first()
     if state:
-        state.name = new_name
+        state.name = "New Mexico"
         session.commit()
 
 
 if __name__ == "__main__":
     update_state_name(
-        sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4]), sys.argv[5]
+        sys.argv[1], sys.argv[2], sys.argv[3]
     )
