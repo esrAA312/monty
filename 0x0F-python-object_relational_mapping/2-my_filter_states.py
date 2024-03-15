@@ -11,11 +11,8 @@ def list_states(username, password, database, state_name):
 
     cursor = db.cursor()
 
-    cursor.execute(
-        "SELECT * FROM states WHERE name = BINARY '{}' ORDER BY states.id".format(
-            state_name
-        )
-    )
+    cursor.execute("SELECT * FROM states WHERE name = BINARY '{}' \
+    ORDER BY states.id".format(state_name))
 
     rows = cursor.fetchall()
 
