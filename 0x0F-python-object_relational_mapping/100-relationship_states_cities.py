@@ -6,7 +6,8 @@ from relationship_city import Base, City
 
 def add_city_state(username, password, database):
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(username, password, database),
+        "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+            username, password, database),
         pool_pre_ping=True,
     )
 

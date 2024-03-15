@@ -8,10 +8,10 @@ from model_state import State
 
 
 def add_new_state(username, password, database, state_name):
-    # Create the SQLAlchemy engine
+
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost/{}".format(username, password, database),
-        pool_pre_ping=True,
+        "mysql+mysqldb://{}:{}@localhost/{}".format(
+            username, password, database), pool_pre_ping=True,
     )
 
     Session = sessionmaker(bind=engine)

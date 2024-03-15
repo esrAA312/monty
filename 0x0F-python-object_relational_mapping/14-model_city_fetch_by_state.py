@@ -16,7 +16,9 @@ def print_cities(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
     for city, state in (
-        session.query(City, State).filter(City.state_id == State.id).order_by(City.id)
+        session.query(City, State
+        .filter(City.state_id == State.id)
+        .order_by(City.id)
     ):
         print(f"{state.name}: ({city.id}) {city.name}")
 

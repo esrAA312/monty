@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that retrieves and prints a state ID from a MySQL database using SQLAlchemy."""
+"""Module that retrieves and prints a state ID from a MySQL database ."""
 
 import sys
 from sqlalchemy import create_engine
@@ -12,7 +12,8 @@ def get_state_id(username, password, database, state_name):
     Retrieve and print the ID of a state from a MySQL database.
     """
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost/{}".format(username, password, database),
+        "mysql+mysqldb://{}:{}@localhost/{}".format(
+            username, password, database),
         pool_pre_ping=True,
     )
     Base.metadata.create_all(engine)
