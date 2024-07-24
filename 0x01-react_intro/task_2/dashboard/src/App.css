@@ -1,0 +1,53 @@
+.App {
+  font-size: 16px;
+  --primary-color: #e0354b;
+}
+
+/* App-Header */
+.App-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.App-header img {
+  width: 150px;
+  height: 150px;
+}
+
+.App-header h1 {
+  color: var(--primary-color);
+}
+
+
+/* App-body */
+.App-body {
+  padding: 3rem;
+  height: 47vh;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.App-body p {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.App-body label {
+  font-weight: 500;
+}
+
+/* App-footer */
+.App-footer {
+  font-style: italic;
+  font-weight: 500;
+  border-top: 3px solid var(--primary-color);
+  display: flex;
+  justify-content: center;
+}
+
+input ~ label,
+button {
+  margin-left: 1rem;
+}

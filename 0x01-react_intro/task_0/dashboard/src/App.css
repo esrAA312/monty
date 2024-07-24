@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.App-header {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  color: #dd3434;
+  border-bottom: 5px solid #dd3434;
+}
+
+.App-header img {
+  height: 200px;
+  width: 200px;
+}
+
+.App-body {
+  padding: 4rem 0 0 3rem;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.App-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: 5px solid #dd3434;
+  font-style: italic;
+  font-size: 1.5rem;
+}
